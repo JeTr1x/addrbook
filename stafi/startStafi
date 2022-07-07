@@ -1,6 +1,13 @@
 #!/bin/bash
+D=$(date +%Y-%m-%d)
+T=$(date +%H:%M:%S)
+echo "Autodelegation started at $D" "$T"
 while :
 do
 sleep 86400
+D=$(date +%Y-%m-%d)
+T=$(date +%H:%M:%S)
+echo "Started getting reward and delegation at $D" "$T"
 ./st
 done
+echo "Finished"
