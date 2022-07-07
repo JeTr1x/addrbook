@@ -2,9 +2,9 @@
 set timeout -1
 spawn ./st2
 expect "Enter keyring passphrase:"
-send -- "SorexGroup\r"
+send -- "YOUR_KEYRING_PPHRSEp\r"
 send -- "y\r"
 expect "Enter keyring passphrase:"
-send -- "SorexGroup\r"
+send -- "YOUR_KEYRING_PPHRSE\r"
 send -- "y\r"
 expect eof
