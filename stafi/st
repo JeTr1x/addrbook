@@ -1,0 +1,10 @@
+#!/usr/bin/expect -f
+set timeout -1
+spawn ./st2
+expect "Enter keyring passphrase:"
+send -- "SorexGroup\r"
+send -- "y\r"
+expect "Enter keyring passphrase:"
+send -- "SorexGroup\r"
+send -- "y\r"
+expect eof

@@ -1,0 +1,6 @@
+#!/bin/bash
+stafihubd tx distribution withdraw-all-rewards --from wallet --fees 2500ufis --chain-id stafihub-public-testnet-3
+sleep 30
+AMO=$(echo $(stafihubd query bank balances WALL -o json | jq '.balances[0].amount') | bc)
+AMF=$(expr $AMO - 10000)
+stafihubd tx staking delegate VAL ${AMF}ufis  --from wallet --fees 2500ufis --chain-id stafihub-public-testnet-3
