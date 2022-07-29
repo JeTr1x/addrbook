@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cntt=0
+sqn=192
+
+while :
+do
+echo "Broadcasting tx num: $cntt ..."
+/root/.kyve/cosmovisor/current/bin/chaind tx broadcast signed/gtxS${cntt}
+((cntt++))
+((sqn++))
+echo "Done $sqn"
+done
