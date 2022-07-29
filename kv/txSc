@@ -2,13 +2,14 @@
 
 cnt=0
 amo=1
+fee=400000
 acn=0
 sqnc=192
 
 while :
 do
 echo "Creating tx num: $cnt ..."
-/root/.kyve/cosmovisor/current/bin/chaind tx bank send FROM TO ${amo}tkyve --sequence=${sqnc} --generate-only> unsigned/gtx${cnt}
+/root/.kyve/cosmovisor/current/bin/chaind tx bank send FROM TO ${amo}tkyve --fees $fee --sequence=${sqnc} --generate-only> unsigned/gtx${cnt}
 /root/.kyve/cosmovisor/current/bin/chaind tx sign unsigned/gtx${cnt} --from wallet --sequence $sqnc --offline --account-number $acn --chain-id korellia> signed/gtxS${cnt}
 
 ((cnt++))
